@@ -12,7 +12,17 @@ const ScorecardCategoryCell: React.FC<ScorecardCategoryCellProps> = ({ scd }) =>
   return (
     <td>
       <StyledSpan>{scd.name}</StyledSpan>
-      <OverlayTrigger overlay={<Tooltip id={scd.category}>{scd.description}</Tooltip>}>
+      <OverlayTrigger
+        overlay={<Tooltip id={scd.category}>{scd.description}</Tooltip>}
+        popperConfig={{
+          modifiers: {
+            preventOverflow: {
+              enabled: false
+            }
+          }
+        }}
+      >
+
         <InfoCircleIcon size={16} />
       </OverlayTrigger>
     </td>

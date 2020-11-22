@@ -9,7 +9,7 @@ interface SetupProps {
 const Setup: React.FC<SetupProps> = ({ handleSelection }) => {
 
   return (
-    <Container>
+    <StyledContainer>
       <Row>
         <Col xs={12} md={4}>
           <StyledHeader>Yatzy</StyledHeader>
@@ -20,9 +20,13 @@ const Setup: React.FC<SetupProps> = ({ handleSelection }) => {
           <StyledButton onClick={() => handleSelection(4)}>4</StyledButton>
         </Col>
       </Row>
-    </Container>
+    </StyledContainer>
   );
 };
+
+const StyledContainer = styled(Container)`
+  margin-top: 1em;
+`
 
 const StyledHeader = styled.h1`
   text-align: center;

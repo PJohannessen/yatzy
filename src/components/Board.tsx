@@ -42,7 +42,7 @@ const Board: React.FC<BoardProps> = ({ ctx, G, moves }) => {
   ) : null;
 
   return (
-    <Container>
+    <StyledContainer>
       <Row>
         <Col xs={12} md={4}>
           <StyledHeader>Yatzy</StyledHeader>
@@ -69,9 +69,13 @@ const Board: React.FC<BoardProps> = ({ ctx, G, moves }) => {
           <Scorecard currentPlayer={ctx.currentPlayer.toString()} dice={G.dice} players={G.players} selectCategory={moves.selectScore} totalRolls={G.totalRolls} />
         </StyledScorecardCol>
       </Row>
-    </Container>
+    </StyledContainer>
   );
 }
+
+const StyledContainer = styled(Container)`
+  margin-top: 1em;
+`
 
 const StyledHeader = styled.h1`
   text-align: center;
